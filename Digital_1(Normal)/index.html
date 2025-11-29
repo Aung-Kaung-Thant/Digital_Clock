@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Get font -->
+     <link rel="stylesheet" href="./assets/font/Archivo/static/Archivo-ExtraLight.ttf">
+</head>
+<body>
+    <!-- This HTML is for beginner. It is very easy to make. -->
+     <div class="container">
+        <div class="clock-container">
+            <div class="clock">
+                <!-- display hour -->
+                <div id="hour">00</div>
+                <div>:</div>
+                <!-- display minute -->
+                <div id="min">00</div>
+                <div>:</div>
+                <!-- display second -->
+                <div id="sec">00</div>
+                <!-- display navigation -->
+                <pre class="nav"> HOUR</pre>
+                <div></div>
+                <pre class="nav">   MIN</pre>
+                <div></div>
+                <pre class="nav">   SEC</pre>
+            </div>
+            <!-- display day & date -->
+            <div class="daydate">
+                    <div id="day">Wed,</div>
+                    <div id="date">30</div>
+            </div>
+        </div>
+     </div>
+
+     <!-- JS -->
+      <script>
+        // set output display
+        let hourdisplay = document.getElementById('hour');
+        let mindisplay = document.getElementById('min');
+        let secdisplay = document.getElementById('sec');
+        let daydisplay = document.getElementById('day');
+        let datedisplay = document.getElementById('date');
+
+
+        // check time each 1 second
+        setInterval(() => {
+            // input current time
+        let currenttime = new Date();
+
+        //convert from number to string
+        let day;
+        switch (currenttime.getDay()) {
+            case 0:
+                day = "Sun";
+                break;
+            case 1:
+                day = "Mon";
+                break;
+            case 2:
+                day = "Tue";
+                break;
+            case 3:
+                day = "Wed";
+                break;
+            case 4:
+                day = "Thu";
+                break;
+            case 5:
+                day = "Fri";
+                break;
+            case  6:
+                day = "Sat";
+            }
+        
+        // display current time
+
+hourdisplay.textContent = currenttime.getHours().toString().padStart(2, '0');
+mindisplay.textContent = currenttime.getMinutes().toString().padStart(2, '0');
+secdisplay.textContent = currenttime.getSeconds().toString().padStart(2, '0');
+
+        // hourdisplay.textContent = (currenttime.getHours());
+        // mindisplay.textContent = (currenttime.getMinutes());
+        // secdisplay.textContent = (currenttime.getSeconds());
+        daydisplay.textContent = day + ',';
+        datedisplay.textContent = (currenttime.getDate());
+        
+        },1000)// 1000 = 1000milliseconds = 1second
+
+
+      </script>
+</body>
+</html>
