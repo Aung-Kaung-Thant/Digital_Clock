@@ -77,15 +77,11 @@
                 day = "Sat";
             }
         
-        // display current time
+        // display current time with 2-digit style
 
-hourdisplay.textContent = currenttime.getHours().toString().padStart(2, '0');
-mindisplay.textContent = currenttime.getMinutes().toString().padStart(2, '0');
-secdisplay.textContent = currenttime.getSeconds().toString().padStart(2, '0');
-
-        // hourdisplay.textContent = (currenttime.getHours());
-        // mindisplay.textContent = (currenttime.getMinutes());
-        // secdisplay.textContent = (currenttime.getSeconds());
+        hourdisplay.textContent = currenttime.getHours().toString().padStart(2, '0');
+        mindisplay.textContent = currenttime.getMinutes().toString().padStart(2, '0');
+        secdisplay.textContent = currenttime.getSeconds().toString().padStart(2, '0');
         daydisplay.textContent = day + ',';
         datedisplay.textContent = (currenttime.getDate());
         
